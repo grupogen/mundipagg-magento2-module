@@ -18,7 +18,7 @@ $postData = [];
  * @var \Mundipagg\Core\Kernel\Aggregates\Transaction $lastTransaction
  */
 $lastTransaction = $this->getTransactionInfo();
-if (!empty($lastTransaction)) {
+if (!empty($lastTransaction) && !empty($lastTransaction->getPostData()->tran_data)) {
     $postData = (json_decode($lastTransaction->getPostData()->tran_data, true));
 }
 ?>
